@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Social Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <span class="logo">Social Blog</span>
+            <input type="text" class="search" placeholder="Buscar publicaciones...">
+            <button id="login-button" class="login-btn">Iniciar sesión</button>
+        </div>
+    </header>
+    <main>
+        <section class="posts">
+            <div class="post-card">
+                <h2>Fundamentos de JavaScript</h2>
+                <p><strong>Publicado por:</strong> Carlos Pérez<br>
+                    <strong>Fecha:</strong> 02/03/2025
+                </p>
+                <p>JavaScript es un lenguaje de programación que se utiliza en el desarrollo web. Aprende los conceptos
+                    básicos para comenzar a programar.</p>
+                <button class="like-btn">12 Me gusta</button>
+            </div>
+            <div class="post-card">
+                <h2>Aprende a diseñar con CSS</h2>
+                <p><strong>Publicado por:</strong> Ana Gómez<br>
+                    <strong>Fecha:</strong> 01/03/2025
+                </p>
+                <p>El diseño web es una parte fundamental en el desarrollo de aplicaciones web. Conoce las propiedades
+                    de CSS para crear interfaces atractivas.</p>
+                <button class="like-btn">30 Me gusta</button>
+            </div>
+        </section>
+        <aside>
+            <div class="welcome-card">
+                <h3>¡Bienvenido!</h3>
+                <p>Explora nuevas publicaciones y conecta con otros usuarios.</p>
+                <button id="profile-button" class="profile-btn">Ver perfil</button>
+            </div>
+        </aside>
+    </main>
+</body>
+
+<script src="script.js" defer></script>
+
+</html>

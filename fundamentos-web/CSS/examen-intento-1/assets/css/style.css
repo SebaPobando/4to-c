@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+.flor {
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0 50px 0 50px;
+    align-items: center;
+    background-color: #d5a6bd;
+    height: auto;
+}
+
+.session {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.navegar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: auto;
+    width: 50%;
+    min-width: auto;
+}
+
+.nav-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style: none;
+    background-color: #cccccc;
+    height: auto;
+    padding: 0 100px 0 100px;
+}
+
+.nav-flowers {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+main {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.month-flower {
+    margin-top: 10px;
+}
+
+#first-flower {
+    width: 70%;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    border: 2px solid black;
+    width: 80%;
+}
+
+.results {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.card {
+    background-color: #e3e3e3;
+}
