@@ -4,10 +4,10 @@ app = Flask(__name__)
 
 # Datos de jugadores con puntajes
 jugadores = [
-   {"nombre": "AlexGamer", "puntaje": 5000},
-   {"nombre": "PixelMaster", "puntaje": 7500},
-   {"nombre": "ShadowNinja", "puntaje": 8200},
-   {"nombre": "CyberWarrior", "puntaje": 9100},
+   {"nombre": "AlexGamer", "puntaje": 9100},
+   {"nombre": "PixelMaster", "puntaje": 8200},
+   {"nombre": "ShadowNinja", "puntaje": 7500},
+   {"nombre": "CyberWarrior", "puntaje": 5200},
    {"nombre": "UltraNoob", "puntaje": 3000}
 ]
 
