@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <span class="number">#1</span>
+      </div>
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+        alt="Bulbasaur"
+        class="pokemon-img"
+      />
+      <h2 class="pokemon-name">Bulbasaur</h2>
+
+      <div class="types">
+        <span class="type planta">Planta</span>
+        <span class="type veneno">Veneno</span>
+      </div>
+
+      <div class="power">
+        <span class="label">⚡ Poder</span>
+        <div class="bar">
+          <div class="fill" style="width: 45%"></div>
+        </div>
+        <span class="power-value">45</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">📏 Altura</span>
+          <span class="stat-value">0.7m</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">⚖ Peso</span>
+          <span class="stat-value">6.9kg</span>
+        </div>
+      </div>
+
+      <button class="details">Ver detalles</button>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

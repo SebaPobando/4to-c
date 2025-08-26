@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.card-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.number {
+    background: #444;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.pokemon-img {
+    width: 120px;
+    margin: 10px auto;
+}
+
+.pokemon-name {
+    font-size: 22px;
+    margin: 5px 0;
+}
+
+.types {
+    margin: 10px 0;
+}
+
+.type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 0 4px;
+}
+
+.type.planta {
+    background: #4CAF50;
+}
+
+.type.veneno {
+    background: #9C27B0;
+}
+
+.power {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.power .label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bar {
+    background: #eee;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    background: #2196F3;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.power-value {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+.details {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2196F3;
+    border-radius: 8px;
+    background: transparent;
+    color: #2196F3;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.details:hover {
+    background: #2196F3;
+    color: white;
+}
