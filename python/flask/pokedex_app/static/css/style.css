@@ -1,11 +1,17 @@
 body {
     font-family: Arial, sans-serif;
     background: #f5f7fa;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.cards-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    gap: 24px;
+    padding: 40px 10px;
 }
 
 .card {
@@ -16,24 +22,30 @@ body {
     padding: 20px;
     text-align: center;
     position: relative;
+    margin: 0;
+    transition: transform 0.2s;
 }
 
-.card-header {
-    display: flex;
-    justify-content: flex-end;
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
 }
 
 .number {
-    background: #444;
-    color: white;
+    background: #eee;
+    color: #333;
     padding: 5px 12px;
     border-radius: 50%;
     font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .pokemon-img {
     width: 120px;
     margin: 10px auto;
+    display: block;
 }
 
 .pokemon-name {
@@ -55,12 +67,46 @@ body {
     margin: 0 4px;
 }
 
+/* 🎨 Colores de tipos Pokémon */
 .type.planta {
     background: #4CAF50;
 }
 
 .type.veneno {
     background: #9C27B0;
+}
+
+.type.fuego {
+    background: #F44336;
+}
+
+.type.agua {
+    background: #2196F3;
+}
+
+.type.electrico {
+    background: #FFEB3B;
+    color: #333;
+}
+
+.type.normal {
+    background: #9E9E9E;
+}
+
+.type.hada {
+    background: #E91E63;
+}
+
+.type.fantasma {
+    background: #673AB7;
+}
+
+.type.roca {
+    background: #795548;
+}
+
+.type.tierra {
+    background: #A0522D;
 }
 
 .power {
@@ -119,9 +165,46 @@ body {
     color: #2196F3;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.2s, color 0.2s;
 }
 
 .details:hover {
     background: #2196F3;
     color: white;
+}
+
+/* 📱 Responsividad */
+@media (max-width: 900px) {
+    .cards-container {
+        gap: 16px;
+        padding: 20px 5px;
+    }
+
+    .card {
+        width: 220px;
+        padding: 15px;
+    }
+
+    .pokemon-img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 2px;
+    }
+
+    .card {
+        width: 95vw;
+        max-width: 350px;
+        padding: 12px;
+    }
+
+    .pokemon-img {
+        width: 70px;
+    }
 }
