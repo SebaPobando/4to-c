@@ -28,6 +28,7 @@ body {
 
 .card:hover {
     transform: translateY(-5px) scale(1.03);
+    cursor: pointer;
 }
 
 .number {
@@ -206,5 +207,183 @@ body {
 
     .pokemon-img {
         width: 70px;
+    }
+}
+
+/* ...existing code... */
+
+/* 404 Error Styles */
+.error-404-bg {
+    background: linear-gradient(135deg, #f5f7fa 60%, #ffe066 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-404-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    padding: 40px 24px;
+    text-align: center;
+    max-width: 350px;
+    width: 90vw;
+}
+
+.pikachu-img {
+    width: 120px;
+    margin-bottom: 20px;
+    filter: grayscale(60%);
+}
+
+.error-title {
+    font-family: 'Pokemon Solid', Arial, sans-serif;
+    font-size: 2.2em;
+    color: #ffcb05;
+    text-shadow: 2px 2px 0 #3b4cca, 4px 4px 0 #2a75bb;
+    margin-bottom: 10px;
+}
+
+.error-msg {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.error-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #3b4cca;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+
+.error-btn:hover {
+    background: #2a75bb;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .error-404-container {
+        padding: 20px 8px;
+    }
+
+    .error-title {
+        font-size: 1.3em;
+    }
+
+    .pikachu-img {
+        width: 80px;
+    }
+}
+
+.welcome-bg {
+    background: linear-gradient(120deg, #f5f7fa 60%, #ffe066 100%);
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-pokeball-bg {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 120px;
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.welcome-main {
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+}
+
+.welcome-title {
+    font-family: 'Pokemon Solid', Arial, sans-serif;
+    font-size: 3em;
+    color: #ffcb05;
+    text-shadow: 2px 2px 0 #3b4cca, 4px 4px 0 #2a75bb;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+}
+
+.welcome-msg {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.welcome-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #3b4cca;
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 2px 8px rgba(43, 76, 202, 0.12);
+    transition: background 0.2s, transform 0.2s;
+    margin-bottom: 32px;
+}
+
+.welcome-btn:hover {
+    background: #2a75bb;
+    transform: scale(1.05);
+}
+
+.welcome-pokemon-row {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.welcome-pokemon {
+    width: 70px;
+    transition: transform 0.2s;
+}
+
+.welcome-pokemon:hover {
+    transform: scale(1.15);
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+    .welcome-title {
+        font-size: 2em;
+    }
+
+    .welcome-main {
+        padding: 30px 5px 20px 5px;
+    }
+
+    .welcome-pokemon-row {
+        gap: 12px;
+    }
+
+    .welcome-pokemon {
+        width: 40px;
+    }
+
+    .welcome-pokeball-bg {
+        width: 70px;
+        top: 10px;
+        left: 10px;
     }
 }

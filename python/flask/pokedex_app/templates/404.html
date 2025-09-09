@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Página no encontrada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='img/pokebola.png') }}"
+    />
+    <!-- Fuente tipo Pokémon (debe estar en static/fonts si la descargas) -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/pokemon-font.css') }}"
+    />
+  </head>
+  <body class="error-404-bg">
+    <div class="error-404-container">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+        alt="Pikachu triste"
+        class="pikachu-img"
+      />
+      <h1 class="pokemon-font error-title">Página no encontrada</h1>
+      <p class="error-msg">¡Ups! El Pokémon que buscas no está aquí.</p>
+      <a href="/pokemon" class="error-btn">Volver a la Pokédex</a>
+    </div>
+  </body>
+</html>

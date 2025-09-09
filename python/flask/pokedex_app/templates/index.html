@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='img/pokebola.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/pokemon-font.css') }}"
+    />
+  </head>
+  <body class="welcome-bg">
+    <img
+      src="{{ url_for('static', filename='img/pokebola.png') }}"
+      alt="Pokebola"
+      class="welcome-pokeball-bg"
+    />
+    <main class="welcome-main">
+      <h1 class="pokemon-font welcome-title">¡Bienvenido a tu Pokédex!</h1>
+      <p class="welcome-msg">
+        Explora el mundo Pokémon, descubre sus tipos, poderes y curiosidades.<br />
+        Haz clic en el botón para comenzar tu aventura.
+      </p>
+      <a href="/pokemon" class="welcome-btn">Ver Pokédex</a>
+      <div class="welcome-pokemon-row">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+          alt="Bulbasaur"
+          class="welcome-pokemon"
+        />
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+          alt="Charmander"
+          class="welcome-pokemon"
+        />
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+          alt="Squirtle"
+          class="welcome-pokemon"
+        />
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+          alt="Pikachu"
+          class="welcome-pokemon"
+        />
+      </div>
+    </main>
+  </body>
+</html>
