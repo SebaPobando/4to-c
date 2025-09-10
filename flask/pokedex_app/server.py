@@ -27,23 +27,21 @@ def mostrar_todos_los_pokemon():
    return render_template("pokemon.html", pokedex=pokedex)
 
 # Ruta para mostrar un Pokémon por nombre
-@app.route("/pokemon/<string:nombre>")
+@app.route("/pokemon/nombre/<string:nombre>")
 def mostrar_pokemon_por_nombre(nombre):
-   pokemon = next((p for p in pokedex if p["nombre"].lower() == nombre.lower()), None)
-   if pokemon:
-       return render_template("pokemon.html", pokedex=[pokemon])
-   else:
-       return render_template("404.html", mensaje="Pokémon no encontrado"), 404
+    for pokemon in pokedex:
+        if nombre.lower() == pokemon["nombre"].lower():
+            return render_template("pokemon.html", pokedex=[pokemon])
+    return render_template("404.html", mensaje="Pokémon no encontrado"), 404
 
 # Ruta para mostrar un Pokémon por número en la Pokédex
-
 @app.route("/pokemon/<int:id>")
 def mostrar_pokemon_por_id(id):
-   pokemon = next((p for p in pokedex if p["id"] == id), None)
-   if pokemon:
-       return render_template("pokemon.html", pokedex=[pokemon])
-   else:
-       return render_template("404.html", mensaje="Pokémon no encontrado"), 404
+    for pokemon in pokedex:
+        if id == pokemon["id"]:
+            return render_template("pokemon.html", pokedex=[pokemon])
+    return render_template("404.html", mensaje="Pokémon no encontrado"), 404
+
 
 # Ruta para mostrar una cantidad específica de Pokémon
 @app.route("/pokemon/cantidad/<int:cantidad>")
