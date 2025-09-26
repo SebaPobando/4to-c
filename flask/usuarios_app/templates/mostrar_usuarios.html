@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Usuarios</h1>
+      <a href="{{ url_for('index') }}">Nuevo Usuario</a>
+    </nav>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre Completo</th>
+          <th>Email</th>
+          <th>Fecha Creación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for un_usuario in todos_usuarios %}
+        <tr>
+          <td>{{ un_usuario.id }}</td>
+          <td>{{ un_usuario.nombre }} {{ un_usuario.apellido }}</td>
+          <td>{{ un_usuario.email }}</td>
+          <td>{{ un_usuario.created_at }}</td>
+          <td>
+            <a
+              class="btn-accion ver"
+              href="{{ url_for('ver_usuario', id=un_usuario.id) }}"
+              >Ver</a
+            >
+            <a class="btn-accion editar" href="#">Editar</a>
+            <a
+              class="btn-accion borrar"
+              href="#"
+              onclick="return confirm('¿Seguro que deseas borrar este usuario?');"
+              >Borrar</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.navbar {
+    background: #007bff;
+    color: #fff;
+    padding: 1rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    background: #0056b3;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.navbar a:hover {
+    background: #003d80;
+}
+
+table {
+    width: 80%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #007bff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Contenedor del formulario */
+form {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Botón */
+input[type="submit"] {
+    background: #4a90e2;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background: #357abd;
+}

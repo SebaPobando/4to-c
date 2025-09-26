@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuario</title>
+  </head>
+  <body>
+    <h1>Usuario {{ un_usuario.id }}</h1>
+    <p>Nombre Completo: {{ un_usuario.nombre }} {{ un_usuario.apellido }}</p>
+    <p>Email: {{ un_usuario.email }}</p>
+    <p>Fecha Creación: {{ un_usuario.created_at }}</p>
+    <p>Fecha Actualización: {{ un_usuario.updated_at }}</p>
+    <a class="btn-accion editar" href="#">Editar</a>
+    <a
+      class="btn-accion borrar"
+      href="#"
+      onclick="return confirm('¿Seguro que deseas borrar este usuario?');"
+      >Borrar</a
+    >
+  </body>
+</html>
