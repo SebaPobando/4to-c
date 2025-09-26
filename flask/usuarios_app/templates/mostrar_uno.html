@@ -4,19 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Usuario</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
   <body>
-    <h1>Usuario {{ un_usuario.id }}</h1>
-    <p>Nombre Completo: {{ un_usuario.nombre }} {{ un_usuario.apellido }}</p>
-    <p>Email: {{ un_usuario.email }}</p>
-    <p>Fecha Creación: {{ un_usuario.created_at }}</p>
-    <p>Fecha Actualización: {{ un_usuario.updated_at }}</p>
-    <a class="btn-accion editar" href="#">Editar</a>
-    <a
-      class="btn-accion borrar"
-      href="#"
-      onclick="return confirm('¿Seguro que deseas borrar este usuario?');"
-      >Borrar</a
-    >
+    <div class="usuario-card">
+      <div class="card-header">
+        <!-- Si tienes URL de avatar en tu modelo, úsala; sino se muestran iniciales -->
+        {% if un_usuario.avatar_url %}
+        <img
+          class="avatar"
+          src="{{ un_usuario.avatar_url }}"
+          alt="Avatar de {{ un_usuario.nombre }}"
+        />
+        {% else %}
+        <div class="avatar">
+          {{ (un_usuario.nombre[:1] if un_usuario.nombre else '') }}{{
+          (un_usuario.apellido[:1] if un_usuario.apellido else '') }}
+        </div>
+        {% endif %}
+
+        <div class="header-info">
+          <h1>Usuario {{ un_usuario.id }}</h1>
+          <div class="small">Perfil</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="label">Nombre</span>
+          <strong>{{ un_usuario.nombre }} {{ un_usuario.apellido }}</strong>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Email</span>
+          <strong>{{ un_usuario.email }}</strong>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Creado</span>
+          <strong>{{ un_usuario.created_at }}</strong>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Actualizado</span>
+          <strong>{{ un_usuario.updated_at }}</strong>
+        </div>
+
+        <div class="card-actions">
+          <a
+            class="btn-accion editar"
+            href="{{ url_for('cargar_editar', id = un_usuario.id) }}"
+            >Editar</a
+          >
+          <a
+            class="btn-accion borrar"
+            href="{{ url_for('borrar_usuario', id=un_usuario.id) }}"
+            onclick="return confirm('¿Seguro que deseas borrar este usuario?');"
+            >Borrar</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

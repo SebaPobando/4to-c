@@ -27,6 +27,16 @@ class Usuario:
        return cls(resultado[0])
    
    @classmethod
+   def delete(cls, data):
+       query = "DELETE FROM usuarios WHERE id = %(id)s;"
+       return connectToMySQL('usuarios_db').query_db(query, data)
+   
+   @classmethod
+   def update(cls, data):
+       query = "UPDATE usuarios SET nombre = %(nombre)s, apellido = %(apellido)s, email = %(email)s, updated_at = NOW() WHERE id = %(id)s;"
+       return connectToMySQL('usuarios_db').query_db(query, data)
+   
+   @classmethod
    def save(cls, data ):
        query = "INSERT INTO usuarios ( nombre , apellido , email , created_at, updated_at ) VALUES ( %(nombre)s , %(apellido)s , %(email)s , NOW() , NOW() );"
        return connectToMySQL('usuarios_db').query_db( query, data )

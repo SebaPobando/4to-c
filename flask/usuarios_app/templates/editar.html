@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Usuario</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Editar usuario</h1>
+    <form
+      action="{{ url_for('actualizar_usuario', id=un_usuario.id) }}"
+      method="POST"
+    >
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" value="{{ un_usuario.nombre }}" />
+      <label for="apellido">Apellido</label>
+      <input type="text" name="apellido" value="{{ un_usuario.apellido }}" />
+      <label for="email">Email</label>
+      <input type="text" name="email" value="{{ un_usuario.email }}" />
+      <input type="submit" value="Editar" />
+    </form>
+  </body>
+</html>
