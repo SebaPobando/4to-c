@@ -16,6 +16,15 @@ class Restaurante:
        return connectToMySQL('esquema_tacos').query_db(query, datos)
    
    @classmethod
+   def get_all(cls):
+       query = "SELECT * FROM restaurantes;"
+       resultados = connectToMySQL('esquema_tacos').query_db(query)
+       restaurantes = []
+       for fila in resultados:
+           restaurantes.append(cls(fila))
+       return restaurantes
+   
+   @classmethod
    def get_restaurante_y_tacos(cls, datos):
        query = "SELECT * FROM restaurantes LEFT JOIN tacos ON tacos.restaurante_id = restaurantes.id WHERE restaurantes.id = %(id)s;"
        #El resultado es una lista de diccionarios con todos los datos del restaurante perteneciente al id y los tacos relacionados a este

@@ -1,10 +1,12 @@
 from flask_app import app #Importamos la app
 from flask import render_template,redirect,request,session,flash
 from flask_app.models.taco import Taco #Importamos la clase
+from flask_app.models.restaurante import Restaurante
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    todos_restaurantes = Restaurante.get_all()
+    return render_template('index.html', todos_restaurantes=todos_restaurantes)
 
 @app.route('/crear',methods=['POST'])
 def crear():
