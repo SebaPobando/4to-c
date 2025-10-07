@@ -11,7 +11,7 @@ class Taco:
 
     @classmethod
     def save(cls, datos):
-        query = "INSERT INTO tacos (tortilla, guiso, salsa) VALUES(%(tortilla)s, %(guiso)s, %(salsa)s);"
+        query = "INSERT INTO tacos (tortilla, guiso, salsa, restaurante_id) VALUES (%(tortilla)s, %(guiso)s, %(salsa)s, %(restaurante_id)s);"
         return connectToMySQL('esquema_tacos').query_db(query, datos)
     
     @classmethod
