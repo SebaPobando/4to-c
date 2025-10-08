@@ -1,20 +1,18 @@
 from flask_app import app #Importamos la app
 from flask import render_template,redirect,request,session,flash
-from flask_app.models.taco import Taco #Importamos la clase
+from flask_app.models.curso import Curso #Importamos la clase
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('cursos.html')
 
-@app.route('/crear',methods=['POST'])
+@app.route('/crear_curso',methods=['POST'])
 def crear():
     datos = {
-        "tortilla":request.form['tortilla'],
-        "guiso": request.form['guiso'],
-        "salsa": request.form['salsa']
+        "nombre":request.form['nombre']
     }
-    Taco.save(datos)
-    return redirect('/tacos')
+    Curso.save(datos)
+    return redirect('/')
 
 @app.route('/tacos')
 def tacos():
