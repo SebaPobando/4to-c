@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <main class="tablita">
+        <table>
+            <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </thead>
+
+                <tbody>
+                    {% for estudiante in estudiantes %}
+                    <tr>
+                        <td>{{ estudiante.nombre }}</td>
+                        <td>{{ estudiante.apellido }}</td>
+                        <td>{{ estudiante.edad }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        <a class="main-link" href="{{ url_for('index') }}">Inicio</a>
+    </main>
+</body>
+</html>

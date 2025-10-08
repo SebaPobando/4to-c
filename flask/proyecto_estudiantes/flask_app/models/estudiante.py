@@ -30,13 +30,3 @@ class Estudiante:
     def save(cls, data):
         query = "INSERT INTO estudiantes (nombre, apellido, edad, created_at, updated_at, curso_id) VALUES (%(nombre)s, %(apellido)s, %(edad)s, NOW(), NOW(), %(curso_id)s);"
         return connectToMySQL('esquema_estudiantes_cursos').query_db(query, data)
-    
-    @classmethod
-    def update(cls, data):
-        query = "UPDATE estudiantes SET nombre = %(nombre)s, apellido = %(apellido)s, edad = %(edad)s, updated_at = NOW(), curso_id = %(curso_id)s WHERE id = %(id)s;"
-        return connectToMySQL('esquema_estudiantes_cursos').query_db(query, data)
-    
-    @classmethod
-    def delete(cls, data):
-        query = "DELETE FROM estudiantes WHERE id = %(id)s;"
-        return connectToMySQL('esquema_estudiantes_cursos').query_db(query, data)

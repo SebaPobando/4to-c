@@ -17,42 +17,9 @@ def crear_curso():
     Curso.save(datos)
     return redirect('/')
 
-# @app.route('/tacos')
-# def tacos():
-#     tacos = Taco.get_all()
-#     return render_template("resultados.html",todos_tacos = tacos)
+@app.route('/cursos/<int:curso_id>')
+def estudiantes_en_curso(curso_id):
+    data = {'id': curso_id}
+    estudiantes = Curso.get_estudiantes_in_curso(data)
+    return render_template('tabla_estudiantes.html', estudiantes=estudiantes)
 
-# @app.route('/mostrar/<int:taco_id>')
-# def detalle(taco_id):
-#     datos = {
-#         'id': taco_id
-#     }
-#     taco = Taco.get_one(datos)
-#     return render_template("detalle.html",taco = taco)
-
-# @app.route('/editar/<int:taco_id>')
-# def editar(taco_id):
-#     datos = {
-#         'id': taco_id
-#     }
-#     taco = Taco.get_one(datos)
-#     return render_template("editar.html", taco = taco)
-
-# @app.route('/actualizar/<int:taco_id>', methods=['POST'])
-# def actualizar(taco_id):
-#     datos = {
-#         'id': taco_id,
-#         "tortilla":request.form['tortilla'],
-#         "guiso": request.form['guiso'],
-#         "salsa": request.form['salsa']
-#     }
-#     Taco.update(datos)
-#     return redirect(f"/mostrar/{taco_id}")
-
-# @app.route('/borrar/<int:taco_id>')
-# def borrar(taco_id):
-#     datos = {
-#         'id': taco_id,
-#     }
-    # Taco.delete(datos)
-    # return redirect('/tacos')

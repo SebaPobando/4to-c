@@ -22,7 +22,7 @@
             <h1>Nuevo Estudiante</h1>
             <ul>
                 {% for curso in cursos %}
-                    <li><a href="">{{ curso.nombre }}</a></li>
+                    <li><a href="{{ url_for('estudiantes_en_curso', curso_id = curso.id) }}">{{ curso.nombre }}</a></li>
                 {% endfor %}
             </ul>
             <a href="{{ url_for('estudiante') }}">Agregar Estudiante</a>
