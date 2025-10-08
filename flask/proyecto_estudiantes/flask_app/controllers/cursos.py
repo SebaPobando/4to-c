@@ -21,5 +21,6 @@ def crear_curso():
 def estudiantes_en_curso(curso_id):
     data = {'id': curso_id}
     estudiantes = Curso.get_estudiantes_in_curso(data)
-    return render_template('tabla_estudiantes.html', estudiantes=estudiantes)
+    cursito = Curso.get_by_id(data)
+    return render_template('tabla_estudiantes.html', estudiantes=estudiantes, cursito = cursito)
 
