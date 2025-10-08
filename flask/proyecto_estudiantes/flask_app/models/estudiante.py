@@ -4,6 +4,7 @@ class Estudiante:
     def __init__(self, data):
         self.id = data['id']
         self.nombre = data['nombre']
+        self.edad = data['edad']
         self.apellido = data['apellido']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
@@ -27,12 +28,12 @@ class Estudiante:
     
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO estudiantes (nombre, apellido, created_at, updated_at) VALUES (%(nombre)s, %(apellido)s, NOW(), NOW());"
+        query = "INSERT INTO estudiantes (nombre, apellido, edad, created_at, updated_at, curso_id) VALUES (%(nombre)s, %(apellido)s, %(edad)s, NOW(), NOW(), %(curso_id)s);"
         return connectToMySQL('esquema_estudiantes_cursos').query_db(query, data)
     
     @classmethod
     def update(cls, data):
-        query = "UPDATE estudiantes SET nombre = %(nombre)s, apellido = %(apellido)s, updated_at = NOW() WHERE id = %(id)s;"
+        query = "UPDATE estudiantes SET nombre = %(nombre)s, apellido = %(apellido)s, edad = %(edad)s, updated_at = NOW(), curso_id = %(curso_id)s WHERE id = %(id)s;"
         return connectToMySQL('esquema_estudiantes_cursos').query_db(query, data)
     
     @classmethod

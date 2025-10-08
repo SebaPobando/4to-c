@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <main>
+        <section class="nuevo-estudiante">
+            <h1>Nuevo Estudiante</h1>
+            <form class="estudiante-form" action="/crear_estudiante" method="POST">
+                <select name="curso_id">
+                    {% for curso in cursos %}
+                    <option value="{{curso.id}}">{{curso.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <div class="nombre-estudiante">
+                    <label for="nombre">Nombre:</label>
+                    <input id="nombre" type="text" name="nombre" required>
+                </div>
+                <div class="apellido-estudiante">
+                    <label for="apellido">Apellido:</label>
+                    <input id="apellido" type="text" name="apellido" required>
+                </div>
+                <div class="edad-estudiante">
+                    <label for="edad">Edad:</label>
+                    <input id="edad" type="number" name="edad" required>
+                </div>
+                <button>Crear Estudiante</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

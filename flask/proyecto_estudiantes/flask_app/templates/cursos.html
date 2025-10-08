@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <form action="/crear_curso" method="POST">
-        <h1>Nuevo Curso</h1>
-        <label for="nombre">Nombre:</label>
-        <input id="nombre" type="text" name="nombre">
-        <button>Crear Curso</button>
-    </form>
 
-    
+    <main>
+        <section class="nuevo-curso">
+            <h1>Nuevo Curso</h1>
+            <form action="/crear_curso" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" type="text" name="nombre" required>
+                <button>Crear Curso</button>
+            </form>
+        </section>
+
+        <section class="todos-cursos">
+            <h1>Nuevo Estudiante</h1>
+            <ul>
+                {% for curso in cursos %}
+                    <li><a href="">{{ curso.nombre }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('estudiante') }}">Agregar Estudiante</a>
+        </section>
+    </main>
 </body>
 </html>

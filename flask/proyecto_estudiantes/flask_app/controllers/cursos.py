@@ -1,55 +1,58 @@
 from flask_app import app #Importamos la app
 from flask import render_template,redirect,request,session,flash
 from flask_app.models.curso import Curso #Importamos la clase
+from flask_app.models.estudiante import Estudiante #Importamos la clase
 
 @app.route('/')
 def index():
-    return render_template('cursos.html')
+    cursos = Curso.get_all()
+    estudiantes = Estudiante.get_all()
+    return render_template('cursos.html', cursos = cursos, estudiantes = estudiantes)
 
 @app.route('/crear_curso',methods=['POST'])
-def crear():
+def crear_curso():
     datos = {
         "nombre":request.form['nombre']
     }
     Curso.save(datos)
     return redirect('/')
 
-@app.route('/tacos')
-def tacos():
-    tacos = Taco.get_all()
-    return render_template("resultados.html",todos_tacos = tacos)
+# @app.route('/tacos')
+# def tacos():
+#     tacos = Taco.get_all()
+#     return render_template("resultados.html",todos_tacos = tacos)
 
-@app.route('/mostrar/<int:taco_id>')
-def detalle(taco_id):
-    datos = {
-        'id': taco_id
-    }
-    taco = Taco.get_one(datos)
-    return render_template("detalle.html",taco = taco)
+# @app.route('/mostrar/<int:taco_id>')
+# def detalle(taco_id):
+#     datos = {
+#         'id': taco_id
+#     }
+#     taco = Taco.get_one(datos)
+#     return render_template("detalle.html",taco = taco)
 
-@app.route('/editar/<int:taco_id>')
-def editar(taco_id):
-    datos = {
-        'id': taco_id
-    }
-    taco = Taco.get_one(datos)
-    return render_template("editar.html", taco = taco)
+# @app.route('/editar/<int:taco_id>')
+# def editar(taco_id):
+#     datos = {
+#         'id': taco_id
+#     }
+#     taco = Taco.get_one(datos)
+#     return render_template("editar.html", taco = taco)
 
-@app.route('/actualizar/<int:taco_id>', methods=['POST'])
-def actualizar(taco_id):
-    datos = {
-        'id': taco_id,
-        "tortilla":request.form['tortilla'],
-        "guiso": request.form['guiso'],
-        "salsa": request.form['salsa']
-    }
-    Taco.update(datos)
-    return redirect(f"/mostrar/{taco_id}")
+# @app.route('/actualizar/<int:taco_id>', methods=['POST'])
+# def actualizar(taco_id):
+#     datos = {
+#         'id': taco_id,
+#         "tortilla":request.form['tortilla'],
+#         "guiso": request.form['guiso'],
+#         "salsa": request.form['salsa']
+#     }
+#     Taco.update(datos)
+#     return redirect(f"/mostrar/{taco_id}")
 
-@app.route('/borrar/<int:taco_id>')
-def borrar(taco_id):
-    datos = {
-        'id': taco_id,
-    }
-    Taco.delete(datos)
-    return redirect('/tacos')
+# @app.route('/borrar/<int:taco_id>')
+# def borrar(taco_id):
+#     datos = {
+#         'id': taco_id,
+#     }
+    # Taco.delete(datos)
+    # return redirect('/tacos')
