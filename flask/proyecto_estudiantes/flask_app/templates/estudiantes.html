@@ -12,7 +12,8 @@
         <section class="nuevo-estudiante">
             <h1>Nuevo Estudiante</h1>
             <form class="estudiante-form" action="/crear_estudiante" method="POST">
-                <select name="curso_id">
+                <label for="seleccionador">Curso:</label>
+                <select id="seleccionador" name="curso_id">
                     {% for curso in cursos %}
                     <option value="{{curso.id}}">{{curso.nombre}}</option>
                     {% endfor %}

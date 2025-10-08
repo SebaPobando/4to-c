@@ -20,7 +20,7 @@
 
         <section class="todos-cursos">
             <h1>Nuevo Estudiante</h1>
-            <ul>
+            <ul class="lista-cursos">
                 {% for curso in cursos %}
                     <li><a href="{{ url_for('estudiantes_en_curso', curso_id = curso.id) }}">{{ curso.nombre }}</a></li>
                 {% endfor %}
