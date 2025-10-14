@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask import flash
 
 class Taco:
     def __init__(self, data):
@@ -39,4 +40,18 @@ class Taco:
     def delete(cls, datos):
         query = "DELETE FROM tacos WHERE id = %(id)s;"
         return connectToMySQL('esquema_tacos').query_db(query, datos)
+    
+    @staticmethod
+    def validar_taco(taco):
+       es_valido = True #Asumimos que la información en válida
+       if len(taco['tortilla']) < 3:
+           flash("La tortilla debe tener al menos 3 caracteres") #Generamos el mensaje
+           es_valido = False #El formulario deja de ser válido
+       if len(taco['guiso']) < 3:
+           flash("La guiso debe tener al menos 3 caracteres")
+           es_valido = False   
+       if len(taco['salsa']) < 3:
+           flash("La salsa debe tener al menos 3 caracteres")
+           es_valido = False
+       return es_valido #Regresamos si es válido o no
 
