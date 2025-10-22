@@ -17,20 +17,6 @@ class Publicacion:
     
     @classmethod
     def get_all(cls):
-        query = """
-            SELECT publicaciones.*, usuarios.nombre, usuarios.apellido
-            FROM publicaciones
-            JOIN usuarios ON publicaciones.usuario_id = usuarios.id
-            ORDER BY publicaciones.created_at DESC;
-        """
+        query = "SELECT * FROM publicaciones;"
         results = connectToMySQL('esquema_stargaze').query_db(query)
-        
-        publicaciones = []
-        for row in results:
-            publicacion = cls(row)
-            publicacion.usuario = {
-                "nombre": row['nombre'],
-                "apellido": row['apellido']
-            }
-            publicaciones.append(publicacion)
-        return publicaciones
+        return results

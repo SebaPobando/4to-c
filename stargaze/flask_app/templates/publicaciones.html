@@ -27,8 +27,8 @@
             {% for publicacion in publicaciones %}
             <div class="tarjeta">
                 <h1>{{ publicacion.nombre_estrella }}</h1>
-                <p>{{ publicacion.usuario.nombre }} {{ publicacion.usuario.apellido }}</p>
-                <p>{{ publicacion.fecha_encuentro }}</p>
+                <p></p>
+                <p>{{ publicacion.fecha_encuentro.strftime('%Y-%m-%d') }}</p>
                 <p>{{ publicacion.lugar_encuentro }}</p>
                 <p>{{ publicacion.descripcion }}</p>
             </div>
