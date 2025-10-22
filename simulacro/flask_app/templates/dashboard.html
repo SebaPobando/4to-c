@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Bienvenid@ {{ usuario.nombre }}</h1>
+        <button class="cerrar-sesion">Cerrar Sesión</button>
+    </nav>
+
+    <main>
+        <section class="nueva-publicacion">
+            <h2>Nueva Publicación</h2>
+            <form action="" method="POST">
+                <input type="text" placeholder="Nombre de Estrella/Constelación" name="nombre-estrella" id="nombre-estrella" required>
+                <input type="text" placeholder="Fecha de Encuentro" name="fecha-encuentro" id="fecha-encuentro" required>
+                <input type="text" placeholder="Lugar de Encuentro" name="lugar-encuentro" id="lugar-encuentro" required>
+                <textarea name="descripcion-encuentro" placeholder="Descripción del encuentro" id="descripcion-encuentro"></textarea>
+                <button class="compartir">Compartir</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

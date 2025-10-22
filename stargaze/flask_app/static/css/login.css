@@ -1,0 +1,142 @@
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo estrellado animado */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at bottom, #0b0c1d 0%, #090a14 100%);
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Capa de estrellas */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    animation: stars 100s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes stars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+/* Contenedor principal */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Secciones (tarjetas de vidrio espacial) */
+section {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 320px;
+    box-shadow: 0 0 20px rgba(105, 90, 205, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+}
+
+/* Títulos */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+    color: #8ab4f8;
+    text-shadow: 0 0 8px rgba(138, 43, 226, 0.8);
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Labels */
+label {
+    font-size: 0.9rem;
+    color: #b5c9ff;
+}
+
+/* Inputs */
+input {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    transition: background 0.3s, box-shadow 0.3s;
+    font-size: 0.95rem;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 10px #7b6eff;
+}
+
+/* Botones */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6b5bff, #9c37ff);
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #4e3fff, #7e22ce);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
+}
+
+/* Responsivo */
+@media (max-width: 750px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 90%;
+        max-width: 360px;
+    }
+}

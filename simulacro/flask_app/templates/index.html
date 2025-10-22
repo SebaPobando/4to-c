@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stargaze 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <section class="registro">
+            <h1>Registro</h1>
+            <form action="/registrar" method="POST">
+                <div class="formulario-nombre">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="formulario-apellido">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="formulario-correo">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="formulario-contrasena">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="password" required>
+                </div>
+                <div class="confirmar-contrasena">
+                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmar-contrasena" name="confirmar-password">
+                </div>
+                <button>Registrar</button>
+            </form>
+        </section>
+
+        <section class="login">
+            <h1>Inicio de Sesión</h1>
+            <form action="" method="POST">
+                <div class="login-completo">
+                    <label for="login-correo">Correo:</label>
+                    <input type="email" id="login-correo" name="login-email" required>
+                </div>
+                <div class="login-contrasena">
+                    <label for="login-contrasena">Contraseña:</label>
+                    <input type="password" id="login-contrasena" name="login-contrasena" required>
+                </div>
+                <button class="loguear">Iniciar Sesión</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stargaze 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/publicaciones.css') }}">
+</head>
+<body>
+    <main>
+        <nav class="barra-navegacion">
+            <h1>Bienvenid@ </h1>
+            <button class="cerrar-sesion">Cerrar Sesión</button>
+        </nav>
+
+        <section class="nueva-publicacion">
+            <form action="/nueva_publicacion" method="POST">
+                <input type="text" id="nombre_estrella" name="nombre_estrella" placeholder="Nombre de Estrella/Constelación" required>
+                <input type="date" id="fecha_encuentro" name="fecha_encuentro" placeholder="Fecha de Encuentro" required>
+                <input type="text" id="lugar_encuentro" name="lugar_encuentro" placeholder="Lugar de Encuentro" required>
+                <textarea name="descripcion" id="descripcion_encuentro" placeholder="Descripción del encuentro"></textarea>
+                <button class="compartir">Compartir</button>
+            </form>
+        </section>
+        
+        <section class="observaciones">
+            {% for publicacion in publicaciones %}
+            <div class="tarjeta">
+                <h1>{{ publicacion.nombre_estrella }}</h1>
+                <p>{{ publicacion.usuario.nombre }} {{ publicacion.usuario.apellido }}</p>
+                <p>{{ publicacion.fecha_encuentro }}</p>
+                <p>{{ publicacion.lugar_encuentro }}</p>
+                <p>{{ publicacion.descripcion }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>

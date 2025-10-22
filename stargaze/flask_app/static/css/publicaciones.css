@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo estelar animado */
+body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0b0c1d 0%, #090a14 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Capa de estrellas */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    animation: stars 120s linear infinite;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+@keyframes stars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+/* Estructura general */
+main {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+}
+
+/* Barra superior */
+.barra-navegacion {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+}
+
+/* Texto de bienvenida */
+.barra-navegacion h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #8ab4f8;
+    text-shadow: 0 0 8px rgba(138, 43, 226, 0.8);
+}
+
+/* Botón cerrar sesión */
+.cerrar-sesion {
+    background: linear-gradient(135deg, #9c37ff, #6b5bff);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cerrar-sesion:hover {
+    background: linear-gradient(135deg, #7e22ce, #4e3fff);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Tarjeta de nueva publicación */
+.nueva-publicacion {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(105, 90, 205, 0.4);
+    width: 100%;
+    max-width: 600px;
+    padding: 35px 25px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Inputs y textarea */
+input,
+textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    font-size: 0.95rem;
+    resize: none;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(200, 200, 255, 0.6);
+    font-style: italic;
+}
+
+input:focus,
+textarea:focus {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 10px #7b6eff;
+}
+
+/* Textarea más alto */
+textarea {
+    min-height: 120px;
+}
+
+/* Botón compartir */
+.compartir {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6b5bff, #9c37ff);
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.compartir:hover {
+    background: linear-gradient(135deg, #4e3fff, #7e22ce);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
+}
+
+/* Adaptable */
+@media (max-width: 700px) {
+    .barra-navegacion {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nueva-publicacion {
+        width: 90%;
+    }
+}
