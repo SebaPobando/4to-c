@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request, session
+from flask import render_template, redirect, request, session, flash
 from flask_app import app
 from flask_app.models.usuario import Usuario
 from flask_bcrypt import Bcrypt
@@ -27,4 +27,16 @@ def registrar():
     print("Usuario registrado con ID:", usuario_id)
     print(request.form)
     
+    return redirect('/dashboard')
+
+@app.route('/actualizar_usuario/<int:id>', methods=['POST'])
+def actualizar_usuario(id):
+    data = {
+        'id': id,
+        'nombre': request.form['nombre'],
+        'apellido': request.form['apellido'],
+        'email': request.form['email'],
+        'password': bcrypt.generate_password_hash(request.form['password'])
+    }
+    Usuario.update(data)
     return redirect('/dashboard')

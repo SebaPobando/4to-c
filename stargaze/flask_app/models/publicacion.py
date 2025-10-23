@@ -20,3 +20,22 @@ class Publicacion:
         query = "SELECT * FROM publicaciones;"
         results = connectToMySQL('esquema_stargaze').query_db(query)
         return results
+    
+    @classmethod
+    def get_by_id(cls, data):
+        query = "SELECT * FROM publicaciones WHERE id = %(id)s;"
+        results = connectToMySQL('esquema_stargaze').query_db(query, data)
+        if len(results) < 1:
+            return False
+        return cls(results[0])
+    
+    @classmethod
+    def update(cls, data):
+        query = """UPDATE publicaciones 
+                SET nombre_estrella = %(nombre_estrella)s,
+                    fecha_encuentro = %(fecha_encuentro)s,
+                    lugar_encuentro = %(lugar_encuentro)s,
+                    descripcion = %(descripcion)s,
+                    updated_at = NOW()
+                WHERE id = %(id)s;"""
+        return connectToMySQL('esquema_stargaze').query_db(query, data)
