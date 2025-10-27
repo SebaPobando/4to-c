@@ -6,7 +6,7 @@ from flask_app.models.usuario import Usuario
 def index():
    usuarios = Usuario.get_all()
    print(usuarios)
-   return render_template("index.html", todos_usuarios = usuarios)
+   return render_template("index.html")
 
 @app.route("/nuevo")
 def nuevo():
